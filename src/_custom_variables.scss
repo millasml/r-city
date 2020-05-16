@@ -18,6 +18,46 @@ h1{
     font-size: 3rem;
 }
 
+.card {
+    margin: 1rem 0rem;
+  }
+
+.progress-bar {
+  color: $custom-medium-gray;
+}
+
+.carousel {
+    .carousel-inner {
+    display: block;
+    margin: auto;
+
+    .carousel-caption {
+      position: relative;
+      left: auto;
+      right: auto;
+    }
+
+    .slide .carousel-indicators li{
+        background-color: black;
+    }
+
+    h3 {
+        color: black;
+        padding: 0.7rem 0rem;
+    }
+
+    p {
+      color: black;
+    }
+
+    li {
+        background-color: black;
+    }
+  }
+
+}
+
+
 @import "node_modules/bootstrap/scss/bootstrap";
 
 

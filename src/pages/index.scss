@@ -1,36 +1,6 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "../custom_variables";
 
-.carousel {
-    .carousel-inner {
-    display: block;
-    margin: auto;
-
-    .carousel-caption {
-      position: relative;
-      left: auto;
-      right: auto;
-    }
-
-    .slide .carousel-indicators li{
-        background-color: black;
-    }
-
-    h3 {
-        color: black;
-        padding: 0.7rem 0rem;
-    }
-
-    p {
-      color: black;
-    }
-
-    li {
-        background-color: black;
-    }
-  }
-
-}
 
 
 
