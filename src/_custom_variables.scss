@@ -11,6 +11,20 @@ $danger:        $red !default;
 $light:         $custom-light-gray;
 $dark:          $custom-dark-gray;
 
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
 $font-family-sans-serif: $custom-body-font;
 $headings-font-family:   $custom-title-font;
 
@@ -18,11 +32,25 @@ h1{
     font-size: 3rem;
 }
 
+.btn-primary{
+  background-color: $custom-bottle-green;
+}
 .card {
     margin: 1rem 0rem;
+    border-radius: 0.2rem;
+    text-align: center;
   }
 
-.progress-bar {
+.card-title{
+  color: $custom-bottle-green;
+  font-weight: 600;
+}
+
+.list-group{
+  text-align: left;
+}
+
+.progress {
   color: $custom-medium-gray;
 }
 

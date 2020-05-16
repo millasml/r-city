@@ -15,7 +15,9 @@ import ProgressBar from "react-bootstrap/ProgressBar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMedal } from "@fortawesome/free-solid-svg-icons"
 
-const IndexPage = () => (
+export default function Home() {
+    
+    return(
   <Layout headerTitle="Dashboard">
     <SEO title="Home" />
     <div className = "home">
@@ -95,5 +97,4 @@ const IndexPage = () => (
    
   </Layout>
 )
-
-export default IndexPage
+    }
