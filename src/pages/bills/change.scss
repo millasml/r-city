@@ -2,6 +2,7 @@
 @import "../../custom_variables";
 
 .change {
+  padding: 0rem 1rem;
 
     .pie{
         font-size: 0.3rem;
@@ -22,10 +23,4 @@
     display: block;
   }
 
-  .change-btn{
-    background-color: $custom-bottle-green;
-    border: none;
-    margin: 1rem auto;
-    display: block;
-  }
 }

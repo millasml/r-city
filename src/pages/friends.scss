@@ -1,0 +1,43 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "../custom_variables";
+
+.friends {
+  .top-3{
+      padding: 1rem;
+      background-color: $custom-bottle-green;
+
+    .rank {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1rem;
+      background-color: $custom-bright-green;
+      text-align: center;
+      line-height: 2rem;
+      color: white;
+      margin: auto;
+    }
+
+    .label {
+      text-align: center;
+      color: white;
+    }
+
+  }
+
+
+
+  .pay-btn {
+    background-color: $custom-bottle-green;
+    border: none;
+    width: 10rem;
+    margin: 1rem auto;
+    display: block;
+  }
+
+  .change-btn{
+    background-color: $custom-bottle-green;
+    border: none;
+    margin: 1rem auto;
+    display: block;
+  }
+}
