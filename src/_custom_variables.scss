@@ -1,0 +1,15 @@
+@import "node_modules/bootstrap/scss/variables";
+@import "components/palette";
+
+//overriding bootstrap variables
+$primary:       $custom-bottle-green;
+$secondary:     $custom-medium-gray;
+$success:       $custom-grass-green;
+$info:          $custom-bright-green;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $custom-light-gray;
+$dark:          $custom-dark-gray;
+
+$font-family-sans-serif: $custom-body-font;
+$headings-font-family:   $custom-title-font;

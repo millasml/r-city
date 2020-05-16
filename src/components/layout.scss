@@ -1,0 +1,9 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "../custom_variables";
+@import "../components/_palette.scss";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+p {
+    font-size: 1rem;
+}
