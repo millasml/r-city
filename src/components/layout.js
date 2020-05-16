@@ -10,10 +10,9 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import BottomNav from './bottom_nav'
+import BottomNav from "./bottom_nav"
 // import "./layout.css"
 import "./layout.scss"
-
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,10 +28,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle="R-City" />
-      <div className = "content">
+      <div className="content">
         <main>{children}</main>
-        <BottomNav/>
       </div>
+      <BottomNav />
     </>
   )
 }
