@@ -67,7 +67,7 @@ const IndexPage = () => (
       <ListGroup>
         {MOCK_FRIENDS.map((friend, rank) => {
           return (
-            <ListGroup.Item>
+            <ListGroup.Item className = {friend.name === "You" ? "you" : ""}>
               <Row>
                 <Col xs={2}><div className="rank">{rank + 4}</div></Col>
                 <Col xs={7}>{friend.name}</Col>

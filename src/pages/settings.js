@@ -1,24 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
+
+import "./settings.scss"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Slide1 from "../images/slide1.png"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Settings" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-      <Image />
-      <Image />
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+import Image from "react-bootstrap/Image"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 
-export default IndexPage
+
+export default function Settings() {
+  return (
+    <Layout headerTitle="Settings">
+      <SEO title="Settings" />
+      <div className="settings">
+        <Image src={Slide1} className="d-block w-100" />
+        <h3>Made for the Razer Fintech Competition in 2020.</h3>
+        
+        <Row>
+          <Col><h4>Created By:</h4></Col>
+          <Col>Milla Samuel <br/> Brandon Ong</Col>
+        </Row>
+
+        <Row>
+          <Col><h4><a href = "https://github.com/millasml/r-city">Github Link</a></h4></Col>
+          
+        </Row>
+        
+      </div>
+    </Layout>
+  )
+}
