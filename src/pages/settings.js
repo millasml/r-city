@@ -5,6 +5,8 @@ import "./settings.scss"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Slide1 from "../images/slide1.png"
+import Slide3 from "../images/slide3.png"
+
 
 import Image from "react-bootstrap/Image"
 import Row from "react-bootstrap/Row"
@@ -28,7 +30,7 @@ export default function Settings() {
           <Col><h4><a href = "https://github.com/millasml/r-city">Github Link</a></h4></Col>
           
         </Row>
-        
+        <Image src={Slide3} className="d-block w-100" />
       </div>
     </Layout>
   )

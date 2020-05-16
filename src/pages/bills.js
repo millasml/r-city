@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useRef } from "react"
 import { Link } from "gatsby"
 
 import "./bills.scss"
@@ -27,15 +27,23 @@ function TransactionEntry(props) {
       </Row>
       <Row>
         <Col>
-        <h5>{props.item}</h5>
+          <h5>{props.item}</h5>
         </Col>
-        
       </Row>
     </ListGroup.Item>
   )
 }
 
-export default function Bills() {
+export default function Bills({location}) {
+
+  const [cashbackChoice, setCashbackChoice] = useState(
+    location.state.newCashbackChoice === undefined ? "Make A Choice" : location.state.newCashbackChoice
+  )
+
+  function changeCashbackChoice(choice) {
+    setCashbackChoice(choice)
+  }
+
   return (
     <Layout headerTitle="Bills">
       <SEO title="Bills" />
@@ -124,8 +132,17 @@ export default function Bills() {
             <ListGroup variant="flush">
               <ListGroup.Item>
                 <Row>
-                  <Col xs = {8}>Current 3% Choice: Dining</Col>
-                  <Col><Link to="/bills/change/"><Button className="change-btn"> Change </Button></Link></Col>
+                  <Col xs={8}>Current 3% Choice: <p className = "highlight">{cashbackChoice}</p></Col>
+                  <Col>
+                    <Link
+                      to="/bills/change/"
+                      state={{
+                        cashbackChoice: cashbackChoice
+                      }}
+                    >
+                      <Button className="change-btn"> Change </Button>
+                    </Link>
+                  </Col>
                 </Row>
               </ListGroup.Item>
             </ListGroup>

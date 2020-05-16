@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import "./bottom_nav.scss"
 import { Link } from "gatsby"
 
@@ -15,35 +15,44 @@ import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { faMoneyBill } from "@fortawesome/free-solid-svg-icons"
 import { faUsers } from "@fortawesome/free-solid-svg-icons"
 
-export default function BottomNav() {
+export default function BottomNav(props) {
   return (
     <Container className="bottom-nav">
       <Row className="menu">
         <Link to="/user/">
-          <Col>
+          <Col className={props.page === "You" ? "select" : ""}>
             <FontAwesomeIcon icon={faUser} />
+            <br />
+            <small>Profile</small>
           </Col>
         </Link>
         <Link to="/friends/">
-          <Col>
+          <Col className={props.page === "Leaderboard" ? "select" : ""}>
             <FontAwesomeIcon icon={faUsers} />
+            <br />
+            <small>Friends</small>
           </Col>
         </Link>
         <Link to="/home/">
-          <Col>
+          <Col className={props.page === "Dashboard" ? "select" : ""}>
             <FontAwesomeIcon icon={faHome} />
+            <br />
+            <small>Home</small>
           </Col>
         </Link>
         <Link to="/bills/">
-          <Col>
+          <Col className={props.page === "Bills" ? "select" : ""}>
             <FontAwesomeIcon icon={faMoneyBill} />
+            <br />
+            <small>Bills</small>
           </Col>
         </Link>
 
         <Link to="/settings/">
-          {" "}
-          <Col>
+          <Col className={props.page === "Settings" ? "select" : ""}>
             <FontAwesomeIcon icon={faCog} />
+            <br />
+            <small>Settings</small>
           </Col>
         </Link>
       </Row>

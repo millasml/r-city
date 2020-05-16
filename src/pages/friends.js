@@ -10,6 +10,7 @@ import ListGroup from "react-bootstrap/ListGroup"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Header from "../components/header"
 
 import Profile1 from "../images/profile1.jpg"
 import Profile2 from "../images/profile2.jpg"
@@ -34,6 +35,9 @@ const IndexPage = () => (
     <SEO title="Friends" />
     <div className="friends">
       <div className="top-3">
+        <Row>
+          <h1>Leaderboard</h1>
+        </Row>
         <Row>
           <Col>
             <Image className="irrelevant" src={Profile1} roundedCircle fluid />
@@ -67,9 +71,11 @@ const IndexPage = () => (
       <ListGroup>
         {MOCK_FRIENDS.map((friend, rank) => {
           return (
-            <ListGroup.Item className = {friend.name === "You" ? "you" : ""}>
+            <ListGroup.Item className={friend.name === "You" ? "you" : ""}>
               <Row>
-                <Col xs={2}><div className="rank">{rank + 4}</div></Col>
+                <Col xs={2}>
+                  <div className="rank">{rank + 4}</div>
+                </Col>
                 <Col xs={7}>{friend.name}</Col>
                 <Col>
                   <FontAwesomeIcon icon={faChessQueen} /> {friend.points}

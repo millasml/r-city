@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { PieChart } from "react-minimal-pie-chart"
 
@@ -10,6 +10,7 @@ import Col from "react-bootstrap/Col"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import ListGroup from "react-bootstrap/ListGroup"
+import Modal from "react-bootstrap/Modal"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -22,16 +23,41 @@ const MOCK_DATA = [
   { title: "Transport", value: 203, color: "#A0CCDA" },
 ]
 
-export default function Change() {
+export default function Change({ location }) {
+  const [cashbackChoice, setCashbackChoice] = useState(
+    location.state === null ? null : location.state.cashbackChoice
+  )
+
+  const [preliminaryChoice, setPreliminaryChoice] = useState(null)
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+
   return (
+    
     <Layout headerTitle="Rewards Choice">
       <SEO title="Rewards Choice" />
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>New Choice Selected.</Modal.Title>
+        </Modal.Header>
+  <Modal.Body>Confirm your choice of <h2>{preliminaryChoice}</h2> Note that you can only change your choice once a month.</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={() => {setCashbackChoice(preliminaryChoice); handleClose()}}>
+            Confirm
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div className="change">
         <Container className="overview">
           <Row>
             <Col>
               <p className="text-center">your are currently earning 3% from</p>
-              <h1 className="text-center">Dining</h1>
+              <h1 className="text-center">{cashbackChoice}</h1>
             </Col>
           </Row>
         </Container>
@@ -57,19 +83,32 @@ export default function Change() {
             <ListGroup variant="flush">
               {MOCK_DATA.map(entry => {
                 return (
-                  <ListGroup.Item>
-                    <Row>
-                      <Col xs={5}>{entry.title}</Col>
-                      <Col>{`$${entry.value}`}</Col>
-                      <Col>Choose</Col>
-                    </Row>
-                  </ListGroup.Item>
+                  <>
+                    <ListGroup.Item>
+                      <Row>
+                        <Col xs={5}>{entry.title}</Col>
+                        <Col>{`$${entry.value}`}</Col>
+                        <Col
+                          onClick={() => {
+                            setPreliminaryChoice(entry.title)
+                            handleShow()
+                          }}
+                          className = "choose"
+                        >
+                          Choose
+                        </Col>
+                      </Row>
+                    </ListGroup.Item>
+                  </>
                 )
               })}
+ 
             </ListGroup>
           </Card.Body>
         </Card>
-        <Link to = "/bills/"><Button className="pay-btn"> Go Back </Button></Link>
+        <Link to="/bills/" state = {{newCashbackChoice: cashbackChoice}}>
+          <Button className="pay-btn"> Go Back </Button>
+        </Link>
       </div>
     </Layout>
   )

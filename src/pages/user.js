@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
+import React, { useState, useRef} from "react"
 
 import "./user.scss"
 

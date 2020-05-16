@@ -16,11 +16,10 @@ export default function Layout (props)  {
 
   return (
     <>
-      <Header siteTitle={props.headerTitle} />
       <div className="content">
         <main>{props.children}</main>
       </div>
-      <BottomNav />
+      <BottomNav page = {props.headerTitle}/>
     </>
   )
 }

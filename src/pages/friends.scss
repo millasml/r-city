@@ -2,9 +2,20 @@
 @import "../custom_variables";
 
 .friends {
+
+  
   .top-3{
-      padding: 1rem;
       background-color: $custom-bottle-green;
+      margin-top: 0rem;
+      padding: 1rem 1rem;
+
+      h1{
+        text-align: center;
+        color: white;
+        display: block;
+        margin: auto;
+        padding: 1rem 0rem;
+      }
 
     .rank {
       width: 2rem;

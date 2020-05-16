@@ -2,7 +2,7 @@
 @import "../custom_variables";
 
 .bottom-nav {
-    background-color: $custom-bottle-green;
+    background-color: white;
     padding: 0.2rem 0rem;
     display: flex;
     justify-content: center;
@@ -11,16 +11,25 @@
     position: fixed;
     bottom: 0;
     z-index: $zindex-fixed;
-    color: white;
+    color: $custom-medium-gray;
     font-size: 2rem;
     text-align: center;
     width: 100%;
+    line-height: 0.9rem;
+
+    small {
+        font-size: 40%;
+    }
 
     a{
-        color: white;
+        color: $custom-medium-gray;
     }
     .menu {
         position: absolute;
         margin: auto;
+
+        .select {
+            color: black;
+        }
     }
 }
