@@ -1,7 +1,12 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "../custom_variables";
 
-.user{
-    padding: 0rem 1rem;
+.user {
+  padding: 0rem 1rem;
 
+  .overview {
+    .tab-description{
+        padding: 1rem 0rem;
+    }
+  }
 }
