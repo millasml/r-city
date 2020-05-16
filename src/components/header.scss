@@ -1,0 +1,13 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "../custom_variables";
+
+.header{
+    background-color: $custom-bottle-green;
+    padding: 1rem;
+    height: 5rem;
+    position: fixed;
+    z-index: $zindex-fixed;
+    color: white;
+    width: 100%;
+    text-align: center;
+}

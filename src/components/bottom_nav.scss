@@ -1,8 +1,22 @@
-
+@import "node_modules/bootstrap/scss/functions";
+@import "../custom_variables";
 
 .bottom-nav {
-    p {
-        font-size: 10px;
+    background-color: $custom-bottle-green;
+    padding: 0.2rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 4rem;
+    position: fixed;
+    bottom: 0;
+    z-index: $zindex-fixed;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    .menu {
+        position: absolute;
+        margin: auto;
     }
-
 }

@@ -13,3 +13,11 @@ $dark:          $custom-dark-gray;
 
 $font-family-sans-serif: $custom-body-font;
 $headings-font-family:   $custom-title-font;
+
+h1{
+    font-size: 3rem;
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
