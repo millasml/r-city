@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState } from "react"
 import LineChart from "react-linechart"
 import { PieChart } from "react-minimal-pie-chart"
-
 
 import "./user.scss"
 
@@ -23,33 +22,33 @@ import { faChessQueen } from "@fortawesome/free-solid-svg-icons"
 import { faCaretLeft } from "@fortawesome/free-solid-svg-icons"
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons"
 
-const MOCK_DATA = [[
-  { x: 1, y: 2 },
-  { x: 2, y: 5 },
-  { x: 3, y: 6 },
-  { x: 4, y: 8 },
-  { x: 5, y: 7 },
-  { x: 6, y: 10 },
-], 
+const MOCK_DATA = [
+  [
+    { x: 1, y: 2 },
+    { x: 2, y: 5 },
+    { x: 3, y: 6 },
+    { x: 4, y: 8 },
+    { x: 5, y: 7 },
+    { x: 6, y: 10 },
+  ],
 
-[
-  { x: 1, y: 2 },
-  { x: 2, y: 6 },
-  { x: 3, y: 6 },
-  { x: 4, y: 8 },
-  { x: 5, y: 10 },
-  { x: 6, y: 10 },
-], 
+  [
+    { x: 1, y: 2 },
+    { x: 2, y: 6 },
+    { x: 3, y: 6 },
+    { x: 4, y: 8 },
+    { x: 5, y: 10 },
+    { x: 6, y: 10 },
+  ],
 
-[
-  { x: 1, y: 2 },
-  { x: 2, y: 3 },
-  { x: 3, y: 6 },
-  { x: 4, y: 8 },
-  { x: 5, y: 9 },
-  { x: 6, y: 10 },
-]
-
+  [
+    { x: 1, y: 2 },
+    { x: 2, y: 3 },
+    { x: 3, y: 6 },
+    { x: 4, y: 8 },
+    { x: 5, y: 9 },
+    { x: 6, y: 10 },
+  ],
 ]
 
 const PIE_DATA = [
@@ -68,8 +67,8 @@ const MONTH_DATA = [
     { x: 4, y: 8 },
     { x: 5, y: 10 },
     { x: 6, y: 10 },
-  ], 
-  
+  ],
+
   [
     { x: 1, y: 5 },
     { x: 2, y: 6 },
@@ -77,7 +76,23 @@ const MONTH_DATA = [
     { x: 4, y: 8 },
     { x: 5, y: 9 },
     { x: 6, y: 7 },
-  ]
+  ],
+]
+
+const SUGGESTIONS = [
+  {
+    title: "Reduce the Spending on Dining",
+    description: "Dining currently takes up 10% of your spending.",
+  },
+  {
+    title: "Stick to taking the bus",
+    description: "Your transport expenses are 30% higher than last month's",
+  },
+  {
+    title: "Set your Cashback Option to Online Shopping",
+    description: "Based on your previous spending trends, you spend most on Online Shopping in the month of May.",
+  },
+
 ]
 
 export default function User() {
@@ -86,9 +101,9 @@ export default function User() {
   const [earningGrowth, setEarningGrowth] = useState(3)
   const [spendingGrowth, setSpendingGrowth] = useState(3)
 
-  const [suggestions, setSuggestions] = useState(3)
+  const [suggestions, setSuggestions] = useState(SUGGESTIONS)
 
-  const [todo, setTodo] = useState(3)
+  const [todo, setTodo] = useState([])
 
   const scaleData = (data, scale) => {
     return data[Math.floor(Math.random() * data.length)].map(d => {
@@ -97,6 +112,29 @@ export default function User() {
         y: d.y * (scale / 100 + 1),
       }
     })
+  }
+
+  const moveSuggestionToTodo = (index) => {
+    const suggestion = suggestions[index]
+    const newSuggestions = [...suggestions]
+    newSuggestions.splice(index, 1)
+    setSuggestions(newSuggestions)
+
+    const newTodo = [...todo]
+    newTodo.push(suggestion)
+    setTodo(newTodo)
+  }
+
+  const removeFromTodo = (index) => {
+    const newTodo = [...todo]
+    newTodo.splice(index, 1)
+    setTodo(newTodo)
+  }
+
+  const removeFromSuggestions = (index) => {
+    const newSuggestions = [...suggestions]
+    newSuggestions.splice(index, 1)
+    setSuggestions(newSuggestions)
   }
 
   return (
@@ -198,15 +236,38 @@ export default function User() {
                   regarding your wealth and spending.
                 </Card.Subtitle>
                 <LineChart
-                  width={350}
-                  height={250}
-                  hideXLabel={true}
-                  hideYLabel={true}
-                  data={[{ color: "green", points: scaleData(MOCK_DATA, earningGrowth)}, { color: "blue", points: scaleData(MOCK_DATA, spendingGrowth) }]}
+                  width="250"
+                  height="250"
+                  xLabel="Account Balance ($)"
+                  yLabel="Years from Now"
+                  hideXAxis={false}
+                  hideYAxis={true}
+                  data={[
+                    {
+                      color: "green",
+                      points: scaleData(MOCK_DATA, earningGrowth),
+                    },
+                    {
+                      color: "blue",
+                      points: scaleData(MOCK_DATA, spendingGrowth),
+                    },
+                  ]}
                 />
                 <Row>
-                  <Col><div className = "circle" style = {{backgroundColor: "green"}}></div> {"Spending"}</Col>
-                  <Col><div className = "circle" style = {{backgroundColor: "blue"}}></div> {"Earnings"}</Col>
+                  <Col>
+                    <div
+                      className="circle"
+                      style={{ backgroundColor: "green" }}
+                    ></div>{" "}
+                    {"Spending"}
+                  </Col>
+                  <Col>
+                    <div
+                      className="circle"
+                      style={{ backgroundColor: "blue" }}
+                    ></div>{" "}
+                    {"Earnings"}
+                  </Col>
                 </Row>
               </Card.Body>
             </Card>
@@ -227,66 +288,89 @@ export default function User() {
                   label={({ dataEntry }) => dataEntry.title}
                   data={PIE_DATA}
                 />
-                The best choice of 3% category is <strong> Travel</strong>, which was your choice. Good job!
+                The best choice of 3% category is <strong> Travel</strong>,
+                which was your choice. Good job!
               </Card.Body>
             </Card>
             <Card className="future-predictions">
               <Card.Body>
                 <Card.Title>Month on Month</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                  Here is how your spending compares to last month's for each category.
+                  Here is how your spending compares to last month's for each
+                  category.
                 </Card.Subtitle>
                 <LineChart
                   width={350}
                   height={250}
                   hideXLabel={true}
                   hideYLabel={true}
-                  data={[{ color: "green", points: MONTH_DATA[0]}, { color: "blue", points: MONTH_DATA[1] }]}
+                  data={[
+                    { color: "green", points: MONTH_DATA[0] },
+                    { color: "blue", points: MONTH_DATA[1] },
+                  ]}
                 />
-                 <Row>
-                  <Col><div className = "circle" style = {{backgroundColor: "green"}}></div> {"Last Month"}</Col>
-                  <Col><div className = "circle" style = {{backgroundColor: "blue"}}></div> {"This Month"}</Col>
+                <Row>
+                  <Col>
+                    <div
+                      className="circle"
+                      style={{ backgroundColor: "green" }}
+                    ></div>{" "}
+                    {"Last Month"}
+                  </Col>
+                  <Col>
+                    <div
+                      className="circle"
+                      style={{ backgroundColor: "blue" }}
+                    ></div>{" "}
+                    {"This Month"}
+                  </Col>
                 </Row>
-                <p>You have already exceeded the amount you spent last month. It might be a good idea to start saving up!</p>
+                <p>
+                  You have already exceeded the amount you spent last month. It
+                  might be a good idea to start saving up!
+                </p>
               </Card.Body>
-              
             </Card>
           </Tab>
           <Tab eventKey="actions" title="Actions">
             <div className="tab-description">
-              Here are some recommendations that you might want to consider.
+              Here are some recommendations that you might want to consider. Accepting it will add it to your to-do list.
             </div>
-            <Card>
-              <Card.Body>
-                <Card.Title>Reduce the Spending on Dining</Card.Title>
-                <Card.Text>
-                  Dining currently takes up 10% of your spending.
-                </Card.Text>
-                <Card.Link href="#">Accept</Card.Link>
-                <Card.Link href="#">Reject</Card.Link>
-              </Card.Body>
-            </Card>
-            <Card>
-              <Card.Body>
-                <Card.Title>Reduce the Spending on Dining</Card.Title>
-                <Card.Text>
-                  Dining currently takes up 10% of your spending.
-                </Card.Text>
-                <Card.Link href="#">Accept</Card.Link>
-                <Card.Link href="#">Reject</Card.Link>
-              </Card.Body>
-            </Card>
+            {
+              suggestions.map( (suggestion, index) => {
+                return <Card>
+                <Card.Body>
+                  <Card.Title>{suggestion.title}</Card.Title>
+                  <Card.Text>
+                    {suggestion.description}
+                  </Card.Text>
+                  <Card.Link  onClick = {() => {moveSuggestionToTodo(index)}}>Accept</Card.Link>
+                  <Card.Link onClick = {() => {removeFromSuggestions(index)}}>Reject</Card.Link>
+                </Card.Body>
+              </Card>
+              })
+            }
+           
           </Tab>
           <Tab eventKey="to-do" title="To-Do">
             <div className="tab-description">
               Here are some to-dos for better financial planning.
             </div>
             <ListGroup>
-              <ListGroup.Item>Cras justo odio</ListGroup.Item>
-              <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-              <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-              <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-              <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+              {
+                todo.map((td, index) =>{
+                  return <Card>
+                  <Card.Body>
+                    <Card.Title>{td.title}</Card.Title>
+                    <Card.Text>
+                      {td.description}
+                    </Card.Text>
+                    <Card.Link  onClick = {() => {removeFromTodo(index)}}>Done</Card.Link>
+                  </Card.Body>
+                </Card>
+                })
+              }
+              
             </ListGroup>
           </Tab>
         </Tabs>

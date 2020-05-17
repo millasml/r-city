@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 
 import "./bills.scss"
@@ -36,13 +36,20 @@ function TransactionEntry(props) {
 
 export default function Bills({location}) {
 
+  let initCashbackChoice = "Make a Choice"
+  if (location !== null){
+    if (location.state !== null && location.state !== undefined){
+      if(location.state.newCashbackChoice !== null && location.state.newCashbackChoice!== undefined){
+        initCashbackChoice = location.state.newCashbackChoice
+      }
+    }
+
+  }
+
   const [cashbackChoice, setCashbackChoice] = useState(
-    location.state.newCashbackChoice === undefined ? "Make A Choice" : location.state.newCashbackChoice
+    initCashbackChoice
   )
 
-  function changeCashbackChoice(choice) {
-    setCashbackChoice(choice)
-  }
 
   return (
     <Layout headerTitle="Bills">

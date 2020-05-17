@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import "./friends.scss"
 
@@ -13,7 +12,6 @@ import Button from "react-bootstrap/Button"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Header from "../components/header"
 
 import Profile1 from "../images/profile1.jpg"
 import Profile2 from "../images/profile2.jpg"

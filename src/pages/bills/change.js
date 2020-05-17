@@ -24,9 +24,19 @@ const MOCK_DATA = [
 ]
 
 export default function Change({ location }) {
-  const [cashbackChoice, setCashbackChoice] = useState(
-    location.state === null ? null : location.state.cashbackChoice
-  )
+  let initCashbackChoice = "Make a Choice"
+  if (location !== null) {
+    if (location.state !== null && location.state !== undefined) {
+      if (
+        location.state.cashbackChoice !== null &&
+        location.state.cashbackChoice !== undefined
+      ) {
+        initCashbackChoice = location.state.cashbackChoice
+      }
+    }
+  }
+
+  const [cashbackChoice, setCashbackChoice] = useState(initCashbackChoice)
 
   const [preliminaryChoice, setPreliminaryChoice] = useState(null)
   const [show, setShow] = useState(false)
@@ -37,7 +47,12 @@ export default function Change({ location }) {
   return (
     <Layout headerTitle="Rewards Choice">
       <SEO title="Rewards Choice" />
-      <Modal size="sm" show={show} onHide={handleClose} className = "choice-modal">
+      <Modal
+        size="sm"
+        show={show}
+        onHide={handleClose}
+        className="choice-modal"
+      >
         <Modal.Header closeButton>
           <Modal.Title>New Choice Selected.</Modal.Title>
         </Modal.Header>
@@ -50,7 +65,7 @@ export default function Change({ location }) {
             Close
           </Button>
           <Button
-            className = "pay-btn"
+            className="pay-btn"
             onClick={() => {
               setCashbackChoice(preliminaryChoice)
               handleClose()
