@@ -3,7 +3,17 @@
 ## Whats This?
 This is the code for the Razer Fintech Hackathon 2020.
 
+
+## I Wanna See It!
+The application has been deployed, and you can explore it here: https://r-city-70e8a.web.app/
+Note that this application only works on mobile phones. Hence, if you are viewing it from a browser, please go into dev mode and use the mobile emulator to view it.
+https://www.digitalcitizen.life/emulate-mobile-device-desktop-browser
+Here is a tutorial on how to find the mobile emulator on your browser.
+
+## How Did you Make it?
 React with Gatsby was used, along with bootstrap.
+SCSS was used to style the pages. Bootstrap variables were made custom with the _custom_variables.scss file.
+Each page has its own SCSS file, so that we can sort of maintain separate namespaces for each of them.
 
 
 ## 🧐 What's inside?
@@ -48,18 +58,3 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->

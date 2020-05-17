@@ -80,6 +80,33 @@ export default function Bills({location}) {
 
         <Card>
           <Card.Body>
+            <Card.Title>Cash Rewards & Benefits</Card.Title>
+            <h1>$29.30</h1>
+            <p>Worth of Rewards Waiting to be Redeemed.</p>
+            <Button className="pay-btn"> View and Redeem </Button>
+            <ListGroup variant="flush">
+              <ListGroup.Item>
+                <Row>
+                  <Col xs={8}>Current 3% Choice: <p className = "highlight">{cashbackChoice}</p></Col>
+                  <Col>
+                    <Link
+                      to="/bills/change/"
+                      state={{
+                        cashbackChoice: cashbackChoice
+                      }}
+                    >
+                      <Button className="change-btn"> Change </Button>
+                    </Link>
+                  </Col>
+                </Row>
+              </ListGroup.Item>
+            </ListGroup>
+          </Card.Body>
+        </Card>
+
+        <Card>
+          <Card.Body>
+          <Card.Title>Payments</Card.Title>
             <ListGroup variant="flush">
               <ListGroup.Item>
                 <Row>
@@ -130,31 +157,7 @@ export default function Bills({location}) {
           </Card.Body>
         </Card>
 
-        <Card>
-          <Card.Body>
-            <Card.Title>Cash Rewards & Benefits</Card.Title>
-            <h1>$29.30</h1>
-            <p>Worth of Rewards Waiting to be Redeemed.</p>
-            <Button className="pay-btn"> View and Redeem </Button>
-            <ListGroup variant="flush">
-              <ListGroup.Item>
-                <Row>
-                  <Col xs={8}>Current 3% Choice: <p className = "highlight">{cashbackChoice}</p></Col>
-                  <Col>
-                    <Link
-                      to="/bills/change/"
-                      state={{
-                        cashbackChoice: cashbackChoice
-                      }}
-                    >
-                      <Button className="change-btn"> Change </Button>
-                    </Link>
-                  </Col>
-                </Row>
-              </ListGroup.Item>
-            </ListGroup>
-          </Card.Body>
-        </Card>
+       
       </div>
     </Layout>
   )

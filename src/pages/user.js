@@ -94,6 +94,10 @@ const SUGGESTIONS = [
     title: "Set your Cashback Option to Online Shopping",
     description: "Based on your previous spending trends, you spend most on Online Shopping in the month of May.",
   },
+  {
+    title: "Cool off on Travels",
+    description: "You have had huge spendings on Travels last month. We suggest you stop travelling for the next 6 months to be on track for your saving plan.",
+  },
 
 ]
 
