@@ -4,6 +4,23 @@
 .user {
   padding: 0rem 1rem;
 
+  .pie{
+    font-size: 0.3rem;
+    color: white;
+    padding: 1rem;
+}
+
+  .circle {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    line-height: 0.5rem;
+    color: white;
+    margin: auto;
+    display: inline-block;
+  }
+
   .overview {
     .tab-description{
         padding: 1rem 0rem;

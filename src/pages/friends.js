@@ -7,6 +7,9 @@ import Image from "react-bootstrap/Image"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import ListGroup from "react-bootstrap/ListGroup"
+import OverlayTrigger from "react-bootstrap/OverlayTrigger"
+import Popover from "react-bootstrap/Popover"
+import Button from "react-bootstrap/Button"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -68,6 +71,20 @@ const IndexPage = () => (
           </Col>
         </Row>
       </div>
+      <OverlayTrigger
+        trigger="click"
+        placement="bottom"
+        overlay={
+          <Popover id="popover-basic">
+            <Popover.Title as="h3">Score Calculation</Popover.Title>
+            <Popover.Content>
+              The score is based on your cashback efficiency - that is the amount of cashback you earned over the amount you spent. You can get a maximum score of 500.
+            </Popover.Content>
+          </Popover>
+        }
+      >
+        <Button className = "points-info">How is The Score Calculated?</Button>
+      </OverlayTrigger>
       <ListGroup>
         {MOCK_FRIENDS.map((friend, rank) => {
           return (

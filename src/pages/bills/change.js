@@ -35,19 +35,27 @@ export default function Change({ location }) {
   const handleShow = () => setShow(true)
 
   return (
-    
     <Layout headerTitle="Rewards Choice">
       <SEO title="Rewards Choice" />
-      <Modal show={show} onHide={handleClose}>
+      <Modal size="sm" show={show} onHide={handleClose} className = "choice-modal">
         <Modal.Header closeButton>
           <Modal.Title>New Choice Selected.</Modal.Title>
         </Modal.Header>
-  <Modal.Body>Confirm your choice of <h2>{preliminaryChoice}</h2> Note that you can only change your choice once a month.</Modal.Body>
+        <Modal.Body>
+          Confirm your choice of <h2>{preliminaryChoice}</h2> Note that you can
+          only change your choice once a month.
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={() => {setCashbackChoice(preliminaryChoice); handleClose()}}>
+          <Button
+            className = "pay-btn"
+            onClick={() => {
+              setCashbackChoice(preliminaryChoice)
+              handleClose()
+            }}
+          >
             Confirm
           </Button>
         </Modal.Footer>
@@ -93,7 +101,7 @@ export default function Change({ location }) {
                             setPreliminaryChoice(entry.title)
                             handleShow()
                           }}
-                          className = "choose"
+                          className="choose"
                         >
                           Choose
                         </Col>
@@ -102,11 +110,10 @@ export default function Change({ location }) {
                   </>
                 )
               })}
- 
             </ListGroup>
           </Card.Body>
         </Card>
-        <Link to="/bills/" state = {{newCashbackChoice: cashbackChoice}}>
+        <Link to="/bills/" state={{ newCashbackChoice: cashbackChoice }}>
           <Button className="pay-btn"> Go Back </Button>
         </Link>
       </div>

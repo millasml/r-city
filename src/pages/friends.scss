@@ -37,24 +37,16 @@
 
   }
 
+  .points-info{
+    background-color: $custom-bottle-green;
+    border: white solid 1px;
+    width: 15rem;
+    margin: 1rem auto;
+    display: block;
+  }
+
   .you {
     background-color: $custom-bright-green;
   }
 
-
-
-  .pay-btn {
-    background-color: $custom-bottle-green;
-    border: none;
-    width: 10rem;
-    margin: 1rem auto;
-    display: block;
-  }
-
-  .change-btn{
-    background-color: $custom-bottle-green;
-    border: none;
-    margin: 1rem auto;
-    display: block;
-  }
 }
