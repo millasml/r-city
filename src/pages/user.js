@@ -104,7 +104,7 @@ const SUGGESTIONS = [
 export default function User() {
   const [key, setKey] = useState("future")
 
-  const [earningGrowth, setEarningGrowth] = useState(3)
+  const [earningGrowth, setEarningGrowth] = useState(5)
   const [spendingGrowth, setSpendingGrowth] = useState(3)
 
   const [suggestions, setSuggestions] = useState(SUGGESTIONS)
