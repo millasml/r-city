@@ -17,6 +17,7 @@ import ListGroup from "react-bootstrap/ListGroup"
 
 import ProfilePicture from "../images/user.jpg"
 import Slide1 from "../images/slide1.png"
+import BarChart from "../images/barchart.png"
 
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -307,19 +308,7 @@ export default function User() {
                   Here is how your spending compares to last month's for each
                   category.
                 </Card.Subtitle>
-                <LineChart
-                 width="250"
-                 height="250"
-              
-                  hideXAxis={true}
-                  hideYAxis={true}
-                  hideXLabel = {true}
-                  hideYLabel = {true}
-                  data={[
-                    { color: "green", points: MONTH_DATA[0] },
-                    { color: "blue", points: MONTH_DATA[1] },
-                  ]}
-                />
+                <Image src = {BarChart} fluid/>
                 <Row>
                   <Col>
                     <div

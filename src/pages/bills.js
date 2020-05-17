@@ -58,7 +58,7 @@ export default function Bills({location}) {
         <Container className="overview">
           <Row>
             <Col>
-              <h1 className="text-center">$123.00</h1>
+              <h1 className="text-center">$129.30</h1>
             </Col>
           </Row>
           <Row>
