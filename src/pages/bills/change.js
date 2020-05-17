@@ -15,6 +15,9 @@ import Modal from "react-bootstrap/Modal"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCheck } from "@fortawesome/free-solid-svg-icons"
+
 const MOCK_DATA = [
   { title: "Dining", value: 100, color: "#7BC950" },
   { title: "Drug Stores", value: 115, color: "#7ce577" },
@@ -108,17 +111,17 @@ export default function Change({ location }) {
                 return (
                   <>
                     <ListGroup.Item>
-                      <Row>
+                      <Row className = "choices">
                         <Col xs={5}>{entry.title}</Col>
                         <Col>{`$${entry.value}`}</Col>
-                        <Col
+                        <Col xs = {2}
                           onClick={() => {
                             setPreliminaryChoice(entry.title)
                             handleShow()
                           }}
-                          className="choose"
+                         
                         >
-                          Choose
+                          <FontAwesomeIcon icon = {faCheck} className = {`icon ${entry.title === cashbackChoice? "you" : ""}`}/>
                         </Col>
                       </Row>
                     </ListGroup.Item>

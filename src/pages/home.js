@@ -11,9 +11,15 @@ import ListGroup from "react-bootstrap/ListGroup"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import ProgressBar from "react-bootstrap/ProgressBar"
+import Image from "react-bootstrap/Image"
+
+
+import Profile2 from "../images/profile2.jpg"
+
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMedal } from "@fortawesome/free-solid-svg-icons"
+import { faChessQueen } from "@fortawesome/free-solid-svg-icons"
 
 export default function Home() {
     
@@ -58,13 +64,47 @@ export default function Home() {
       </Card.Body>
     </Card>
 
+
+    <Card>
+      <Card.Body>
+        <Card.Title>Cash Back Status</Card.Title>
+        
+        <ListGroup variant="flush">
+          <ListGroup.Item>
+            <Row>
+              <Col><div className = "pill wide on">1%</div></Col>
+              <Col><div className = "pill wide">1.25%</div></Col>
+              <Col><div className = "pill wide">1.5%</div></Col>
+            </Row>
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <Row >
+              <Col><div className = "pill on">$</div></Col>
+              <Col><div className = "pill on">$</div></Col>
+              <Col><div className = "pill on">$</div></Col>
+              <Col><div className = "pill">$</div></Col>
+              <Col><div className = "pill">$</div></Col>
+              
+            </Row>
+          </ListGroup.Item>
+  
+          <ListGroup.Item>
+           Make 6 monthly on time payments to increase your cashback status.
+          </ListGroup.Item>
+        </ListGroup>
+      </Card.Body>
+    </Card>
+
+
     <Card>
       <Card.Body>
         <Card.Title>Leaderboard</Card.Title>
 
         <Row>
-            <Col xs = {4}><h1 style = {{fontSize: "4rem"}}><FontAwesomeIcon icon = {faMedal}/></h1></Col>
-            <Col><Row><h1>Brandon</h1></Row><Row>Cashback Efficiency of 400</Row></Col>
+            <Col xs = {4}><Image className="first" src={Profile2} roundedCircle fluid /></Col>
+            <Col><Row><h2 className = "text-center">Brandon</h2></Row><Row><Col>
+                  <FontAwesomeIcon icon={faChessQueen} /> 302
+                </Col></Row></Col>
         </Row>
         
         <ListGroup variant="flush">

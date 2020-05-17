@@ -5,6 +5,17 @@
 .change {
   padding: 0rem 1rem;
 
+  .choices {
+    font-size: 80%;
+  }
+
+  .icon{
+    color: $custom-medium-gray;
+    &.you{
+      color: $custom-bottle-green;
+    }
+  }
+
 
     .pie{
         font-size: 0.3rem;

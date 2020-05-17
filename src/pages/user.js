@@ -16,6 +16,8 @@ import Tab from "react-bootstrap/Tab"
 import ListGroup from "react-bootstrap/ListGroup"
 
 import ProfilePicture from "../images/user.jpg"
+import Slide1 from "../images/slide1.png"
+
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChessQueen } from "@fortawesome/free-solid-svg-icons"
@@ -240,8 +242,10 @@ export default function User() {
                   height="250"
                   xLabel="Account Balance ($)"
                   yLabel="Years from Now"
-                  hideXAxis={false}
+                  hideXAxis={true}
                   hideYAxis={true}
+                  hideXLabel = {true}
+                  hideYLabel = {true}
                   data={[
                     {
                       color: "green",
@@ -300,10 +304,13 @@ export default function User() {
                   category.
                 </Card.Subtitle>
                 <LineChart
-                  width={350}
-                  height={250}
-                  hideXLabel={true}
-                  hideYLabel={true}
+                 width="250"
+                 height="250"
+              
+                  hideXAxis={true}
+                  hideYAxis={true}
+                  hideXLabel = {true}
+                  hideYLabel = {true}
                   data={[
                     { color: "green", points: MONTH_DATA[0] },
                     { color: "blue", points: MONTH_DATA[1] },
@@ -350,7 +357,7 @@ export default function User() {
               </Card>
               })
             }
-           
+           <Image src={Slide1} className="d-block w-100" />
           </Tab>
           <Tab eventKey="to-do" title="To-Do">
             <div className="tab-description">
@@ -372,6 +379,7 @@ export default function User() {
               }
               
             </ListGroup>
+            <Image src={Slide1} className="d-block w-100" />
           </Tab>
         </Tabs>
       </div>

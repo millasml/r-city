@@ -6,4 +6,23 @@
   .you {
     background-color: $custom-bright-green;
   }
+  .pill {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    text-align: center;
+    line-height: 2rem;
+    color: $custom-medium-gray;
+    margin: auto;
+    border: solid $custom-bright-green 1px;
+    &.wide {
+      width: 3.5rem;
+    }
+
+    &.on {
+      background-color: $custom-bright-green;
+      color: white;
+    }
+  }
 }
