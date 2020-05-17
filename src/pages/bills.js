@@ -141,14 +141,14 @@ export default function Bills({location}) {
                 cost="$12.00"
               />
               <TransactionEntry
-                date="May 7, 2020"
-                item="Ice Cream Andersens"
-                cost="$12.00"
+                date="May 4, 2020"
+                item="Lazada Purchase"
+                cost="$32.00"
               />
               <TransactionEntry
-                date="May 7, 2020"
-                item="Ice Cream Andersens"
-                cost="$12.00"
+                date="May 2, 2020"
+                item="Netflix"
+                cost="$19.00"
               />
               <ListGroup.Item>
                 <Link to="/bills/">ALL TRANSACTIONS</Link>

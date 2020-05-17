@@ -3,7 +3,9 @@
 
 .user {
   padding: 0rem 1rem;
-
+.link{
+  color: $custom-bottle-green;
+}
 
   .pie{
     font-size: 0.3rem;
@@ -24,7 +26,8 @@
 
   .overview {
     .tab-description{
-        padding: 1rem 0rem;
+        padding: 2rem 1rem;
+        display: block;
     }
   }
 }

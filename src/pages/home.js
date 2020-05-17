@@ -83,6 +83,7 @@ export default function Home() {
               <Col><div className = "pill on">$</div></Col>
               <Col><div className = "pill">$</div></Col>
               <Col><div className = "pill">$</div></Col>
+              <Col><div className = "pill">$</div></Col>
               
             </Row>
           </ListGroup.Item>
@@ -102,7 +103,7 @@ export default function Home() {
         <Row>
             <Col xs = {4}><Image className="first" src={Profile2} roundedCircle fluid /></Col>
             <Col><Row><h2 className = "text-center">Brandon</h2></Row><Row><Col>
-                  <FontAwesomeIcon icon={faChessQueen} /> 302
+                  <FontAwesomeIcon icon={faChessQueen} /> 305
                 </Col></Row></Col>
         </Row>
         
@@ -110,19 +111,19 @@ export default function Home() {
           <ListGroup.Item>
             <Row>
               <Col xs={8}>Milla</Col>
-              <Col>387</Col>
-            </Row>
-          </ListGroup.Item>
-          <ListGroup.Item className = "you">
-            <Row >
-              <Col xs={8}>You</Col>
-              <Col>338</Col>
+              <Col>305</Col>
             </Row>
           </ListGroup.Item>
           <ListGroup.Item>
-            <Row>
+            <Row >
               <Col xs={8}>Celeste</Col>
-              <Col>289</Col>
+              <Col>305</Col>
+            </Row>
+          </ListGroup.Item>
+          <ListGroup.Item className = "you">
+            <Row>
+              <Col xs={8} >You</Col>
+              <Col>201</Col>
             </Row>
           </ListGroup.Item>
           <ListGroup.Item>

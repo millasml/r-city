@@ -344,8 +344,8 @@ export default function User() {
                   <Card.Text>
                     {suggestion.description}
                   </Card.Text>
-                  <Card.Link  onClick = {() => {moveSuggestionToTodo(index)}}>Accept</Card.Link>
-                  <Card.Link onClick = {() => {removeFromSuggestions(index)}}>Reject</Card.Link>
+                  <Card.Link  className = "link" onClick = {() => {moveSuggestionToTodo(index)}}>Accept</Card.Link>
+                  <Card.Link className = "link" onClick = {() => {removeFromSuggestions(index)}}>Reject</Card.Link>
                 </Card.Body>
               </Card>
               })
@@ -365,7 +365,7 @@ export default function User() {
                     <Card.Text>
                       {td.description}
                     </Card.Text>
-                    <Card.Link  onClick = {() => {removeFromTodo(index)}}>Done</Card.Link>
+                    <Card.Link  className = "link" onClick = {() => {removeFromTodo(index)}}>Done</Card.Link>
                   </Card.Body>
                 </Card>
                 })

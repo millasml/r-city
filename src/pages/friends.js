@@ -21,9 +21,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChessQueen } from "@fortawesome/free-solid-svg-icons"
 
 const MOCK_FRIENDS = [
-  { name: "Badass", points: "201" },
-  { name: "Badass", points: "201" },
   { name: "You", points: "201" },
+  { name: "Badass", points: "201" },
+  { name: "Badass", points: "201" },
+  
   { name: "Badass", points: "201" },
   { name: "Badass", points: "201" },
   { name: "Badass", points: "201" },
